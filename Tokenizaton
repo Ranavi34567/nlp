@@ -1,0 +1,39 @@
+#Tokenization - corpus,documents,vocabulary,words
+
+
+!pip install nltk
+corpus=""" hello welcome to nlp's tutorials.
+please watch the nlp! to do an expert in nlp.
+"""
+print(corpus)
+import nltk 
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize 
+documents=sent_tokenize(corpus)
+documents
+for i in documents:
+    print(i)
+------------------------------------------------------
+#tokenization
+#paragraph--->words 
+#sentence---> words 
+from nltk.tokenize import word_tokenize
+word_tokenize(corpus)
+for i in documents:
+    print(word_tokenize(i)) 
+--------------------------------------------------------
+difference between word_tokenize and wordpunct_tokenize are :
+word_tokenize - includes "'s" as a single word 
+wordpunct_tokenize- separates "'" as a different word 
+----------------------------------------------------------------
+from nltk.tokenize import wordpunct_tokenize
+wordpunct_tokenize(corpus) 
+-------------------------------------------------------------
+from nltk.tokenize import TreebankWordTokenizer
+reg=TreebankWordTokenizer() 
+reg.tokenize(corpus) 
+----------------------------------------------------------------------
+difference between word_tokenize and treebankwordtokenizer
+treebanktokenizer - includes "." as a single word
+word_tokenize - separates "." as a different word 
+---------------------------------------------------------------------
